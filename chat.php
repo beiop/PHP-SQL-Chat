@@ -240,7 +240,7 @@ if (isset($_POST['message'])) {
             $timezone_offset_minutes = $_COOKIE['timezone'];
             $time = new DateTime($row["message_date"]);
             $minutes_to_add = ($timezone_offset_minutes);
-            $time->add(new DateInterval('PT' . $minutes_to_add . 'M'));
+            $time->add(new DateInterval('PST' . $minutes_to_add . 'M'));
             $stamp = $time->format('D, d M Y H:i:s');
           } else {
             $stamp = $row["message_date"];
